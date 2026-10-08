@@ -1,0 +1,33 @@
+---
+//src/components/StarImage.astro
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+    src: ImageMetadata;
+    alt: string;
+}
+
+const { src, alt } = Astro.props;
+---
+
+<Image 
+src={src} 
+alt={alt} 
+class="w-full aspect-square object-cover mask-star" 
+/>
+
+<style>
+    .mask-star {
+        mask-image: url("/images/star-fill.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+
+        position: absolute;
+        top: 2px;    
+        left: 2px;  
+        width: calc(100% - 4px);  
+        height: calc(100% - 4px); 
+    }
+</style>

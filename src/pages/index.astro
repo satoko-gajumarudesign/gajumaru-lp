@@ -1,37 +1,25 @@
 ---
-import '../global.css';
-import SnackList from '../components/SnackList.astro';
+import Layout from "../layouts/Layout.astro";
+
+import TopHero from "../components/sections/TopHero.astro";
+import About from "../components/sections/About.astro";
+import Best from "../components/sections/Best.astro";
+import History from "../components/sections/History.astro";
+import Gallery from "../components/sections/Gallery.astro";
+import Items from "../components/sections/Items.astro";
+import Contact from "../components/sections/Contact.astro";
+
 // ここで変数（データ）を定義します
-const petName = "がじゅまる";
-const profileImage="/gajumaru1.jpeg";
 ---
 
-<html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{petName}の紹介</title>
-  </head>
-  <!-- bodyタグに背景色や基本の文字色を設定しています -->
-  <body class="bg-gray-100 text-gray-800 font-sans p-6">
-    <!-- メインコンテンツを中央に配置し、白いカードのように見せています -->
-    <main class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md">
-
-      <!-- タイトルのスタイル（文字を大きく、太く、青色に、中央揃えに） -->
-      <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">{petName}のプロフィール</h1>
-
-      <div class="flex flex-col items-center mb-8">
-        <!-- 写真が入る予定のエリアを丸くグレーで表現しています -->
-			<img 
-			src={profileImage} 
-			alt="愛犬の写真" 
-			class="w-40 h-40 rounded-full object-cover object-[50%_95%] shadow-sm mb-4" 
-		  />
-        <p class="text-lg">いつも一緒に過ごしている大切な家族です。</p>
-      </div>
-
-     <SnackList />
-
-    </main>
-  </body>
-</html>
+<Layout>
+	<main>
+		<TopHero />
+		<About />
+		<Best />
+		<History />
+		<Gallery />
+		<Items />
+		<Contact />
+	</main>
+</Layout>

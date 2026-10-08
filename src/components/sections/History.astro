@@ -1,0 +1,73 @@
+---
+// src/components/sections/History.astro
+import { Image } from "astro:assets";
+import { historyItems } from "@/data/history.ts";
+import dogIcon from "@/assets/icons/dog_icon.png";
+import heartIcon from "@/assets/icons/heart_icon.png";
+import tennisballIcon from "@/assets/icons/tennisball_icon.png";
+---
+
+<section id="history" class="bg-custom-gray">
+    <div class="pt-60 pb-400">
+        <h2 class="text-fluid-xl text-center text-tx-white pb-100">
+            GAJUMARU's HISTORY
+        </h2>
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 place-items-center m-auto max-w-[90%] md:max-w-[70%] gap-y-110 md:gap-y-150"
+        >
+            {
+                historyItems.map((item, index) => {
+                    const isEven = index % 2 === 1;
+
+                    return (
+                        <article class="max-w-sm w-[90%] md:w-full  border border-wave-gold bg-[#D9D9D9] relative p-32 rounded-md md:even:translate-y-[6em] justify-self-start even:justify-self-end md:justify-self-center md:evenjustify-self-center">
+                            {item.decorations &&
+                                item.decorations.map((deco) => (
+                                    <div
+                                        class={`absolute z-20 ${deco.position}`}
+                                    >
+                                        <Image
+                                            class="w-full"
+                                            src={deco.image}
+                                            alt={deco.alt}
+                                        />
+                                    </div>
+                                ))}
+
+                            <div
+                                class={`flex flex-col gap-16 relative z-10 ${isEven ? "items-start text-left" : "items-end text-right"}`}
+                            >
+                                <h3 class="text-2xl md:text-4xl font-medium">
+                                    {item.title}
+                                </h3>
+                                <p class="text-xl md:text-3xl">{item.text}</p>
+                            </div>
+
+                            <div
+                                class={`absolute w-130 md:w-150 top-0 -translate-y-1/2 ${
+                                    isEven
+                                        ? "right-0 md:translate-x-1/4"
+                                        : "left-0 md:-translate-x-1/4"
+                                }`}
+                            >
+                                {item.image && (
+                                    <Image
+                                        class="w-full"
+                                        src={item.image}
+                                        alt={item.alt}
+                                    />
+                                )}
+                            </div>
+                        </article>
+                    );
+                })
+            }
+
+            <div class="w-200">
+                <Image class="w-full" src={dogIcon} alt="" />
+                <Image class="w-full" src={heartIcon} alt="" />
+                <Image class="w-full" src={tennisballIcon} alt="" />
+            </div>
+        </div>
+    </div>
+</section>

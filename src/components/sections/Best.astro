@@ -1,0 +1,86 @@
+---
+// src/components/sections/Best.astro
+import WaveDivider from "@/components/ui/WaveDivider.astro";
+import DecoratedHeading from "@/components/ui/DecoratedHeading.astro";
+import StarImage from "@/components/ui/StarImage.astro";
+import { Image } from "astro:assets";
+import BestToy from "@/assets/images/best_toy.jpeg";
+import BestSnack from "@/assets/images/best_snack.jpeg";
+import BestPlace from "@/assets/images/best_place.jpeg";
+
+const favoriteItems = [
+    {
+        title: "Toy",
+        image: BestToy,
+        alt: "ロープ",
+        text: "I like having this rope pulled.",
+    },
+    {
+        title: "Snack",
+        image: BestSnack,
+        alt: "お菓子",
+        text: "A treat after brushing my teeth.",
+    },
+    {
+        title: "Place",
+        image: BestPlace,
+        alt: "コット",
+        text: "It's my favorite place to chill.",
+    },
+];
+---
+
+<section id="best" class="relative bg-custom-dark pb-40 md:pb-80">
+    <div
+        class="grid grid-cols-1 place-items-center m-auto max-w-[90%] py-30 md:py-60 gap-35 md:gap-50 text-tx-white"
+    >
+        <h2 class="text-fluid-xl text-center">
+            GAJUMARU's Best
+            <span
+                class="flex items-center justify-center md:gap-15 gap-8 text-2xl md:text-4xl text-center text-wave-gold"
+            >
+                <DecoratedHeading />
+                <span>Top talents!</span>
+                <DecoratedHeading className="-scale-x-100" />
+            </span>
+        </h2>
+
+        <div class="grid grid-cols-3 gap-2 md:gap-5">
+            {
+                favoriteItems.map((item) => (
+                    <article class="space-y-5">
+                        <h3 class="text-center text-2xl md:text-4xl text-wave-gold">{item.title}</h3>
+
+                        <figure class="flex flex-col items-center">
+                            <div class="star-container">
+                                <StarImage src={item.image} alt={item.alt} />
+                            </div>
+                            <figcaption class="text-xs sm:text-lg px-5 sm:px-16">{item.text}</figcaption>
+                        </figure>
+                    </article>
+                ))
+            }
+        </div>
+    </div>
+
+    <WaveDivider 
+    colorClass="fill-custom-gray"/>
+</section>
+
+<style>
+    .star-container {
+        position: relative;
+        width: 100%; 
+        aspect-ratio: 1 / 1;
+        
+        background-color: var(--color-wave-gold);
+        mask-image: url("/images/star-fill.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        -webkit-mask-image: url("/images/star-fill.svg");
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+    }
+    </style>
