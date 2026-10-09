@@ -1,17 +1,38 @@
 ---
 // src/components/sections/History.astro
+import WaveDivider from "@/components/ui/WaveDivider.astro";
 import { Image } from "astro:assets";
 import { historyItems } from "@/data/history.ts";
 import dogIcon from "@/assets/icons/dog_icon.png";
 import heartIcon from "@/assets/icons/heart_icon.png";
 import tennisballIcon from "@/assets/icons/tennisball_icon.png";
+import filmIcon from "@/assets/icons/film_icon.png";
+import projectorIcon from "@/assets/icons/projector_icon.png";
 ---
 
 <section id="history" class="bg-custom-gray">
-    <div class="pt-60 pb-400">
-        <h2 class="text-fluid-xl text-center text-tx-white pb-100">
-            GAJUMARU's HISTORY
-        </h2>
+    <div class="pt-60 pb-200">
+        <div class="relative w-fit mx-auto mb-150 md:mb-200">
+            <h2 class="text-fluid-xl text-center text-tx-white">
+                GAJUMARU's HISTORY
+            </h2>
+            <Image
+                class="absolute top-[-25%] right-[0%] md:right-[-16%] w-[20%] rotate-20"
+                src={filmIcon}
+                alt=""
+            />
+            <Image
+                class="absolute top-[-40%] md:top-[-70%] left-[-3%] md:left-[-20%] w-[25%]"
+                src={projectorIcon}
+                alt=""
+            />
+            <Image
+                    class="absolute top-[90%] md:top-[65%] left-[30%] md:left-[15%] w-[15%]"
+                    src={tennisballIcon}
+                    alt=""
+                />
+        </div>
+
         <div
             class="grid grid-cols-1 md:grid-cols-2 place-items-center m-auto max-w-[90%] md:max-w-[70%] gap-y-110 md:gap-y-150"
         >
@@ -40,7 +61,7 @@ import tennisballIcon from "@/assets/icons/tennisball_icon.png";
                                 <h3 class="text-2xl md:text-4xl font-medium">
                                     {item.title}
                                 </h3>
-                                <p class="text-xl md:text-3xl">{item.text}</p>
+                                <p class="text-xl md:text-3xl text-left">{item.text}</p>
                             </div>
 
                             <div
@@ -63,11 +84,21 @@ import tennisballIcon from "@/assets/icons/tennisball_icon.png";
                 })
             }
 
-            <div class="w-200">
+            <div class="w-150 md:w-250 -translate-x-50 relative">
                 <Image class="w-full" src={dogIcon} alt="" />
-                <Image class="w-full" src={heartIcon} alt="" />
-                <Image class="w-full" src={tennisballIcon} alt="" />
+                <Image
+                    class="absolute top-[-35%] right-[-16%] w-[40%] rotate-25"
+                    src={heartIcon}
+                    alt=""
+                />
+                <Image
+                    class="absolute bottom-[-5%] right-[-50%] w-[50%]"
+                    src={tennisballIcon}
+                    alt=""
+                />
             </div>
         </div>
     </div>
+
+    <WaveDivider colorClass="fill-custom-dark"/>
 </section>
