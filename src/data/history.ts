@@ -43,12 +43,12 @@ export const historyItems: HistoryItem[] = [
             {
                 image: heartIcon,
                 alt: "ハートのアイコン",
-                position: "-top-40 -right-10 w-80 rotate-[10deg]",
+                position: "-top-40 -right-10 w-80 rotate-10",
             },
             {
                 image: heartIcon,
                 alt: "ハートのアイコン",
-                position: "top-0 -right-10 w-60 rotate-[40deg]",
+                position: "top-0 -right-10 w-60 rotate-40",
             },
         ],
     },
@@ -72,12 +72,12 @@ export const historyItems: HistoryItem[] = [
             {
                 image: ambulanceIcon,
                 alt: "救急車のアイコン",
-                position: "-top-[80px] left-[200px] w-[200px]",
+                position: "top-[-40%] md:top-[-30%] left-[40%] md:left-[50%] w-200",
             },
             {
                 image: medicineIcon,
                 alt: "薬のアイコン",
-                position: "top-[130px] left-[250px] w-[150px]",
+                position: "top-[55%] md:top-[60%] left-[50%] w-150",
             },
         ],
     },
@@ -90,7 +90,7 @@ export const historyItems: HistoryItem[] = [
             {
                 image: starIcon,
                 alt: "星のアイコン",
-                position: "top-[180px] left-[320px] w-[100px] rotate-[25deg]",
+                position: "top-[75%] right-[-10%] w-80 md:w-100 rotate-25",
             },
         ],
     },
@@ -109,7 +109,7 @@ export const historyItems: HistoryItem[] = [
             {
                 image: campIcon,
                 alt: "キャンプのアイコン",
-                position: "top-[150px] left-[290px] w-[150px]",
+                position: "top-[70%] md:top-[60%] left-[75%] w-100 md:w-150",
             },
         ],
     },
