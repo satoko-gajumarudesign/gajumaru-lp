@@ -37,7 +37,7 @@ export const historyItems: HistoryItem[] = [
         decorations: [
             {
                 image: birthdaycakeIcon,
-                alt: "足跡のアイコン",
+                alt: "ケーキのアイコン",
                 position: "-top-[90px] -left-[20px] w-[200px]",
             },
             {
