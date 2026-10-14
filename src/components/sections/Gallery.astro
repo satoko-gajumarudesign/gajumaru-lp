@@ -42,7 +42,6 @@ const dogImages = [
         </div>
     </div>
     <div class="hidden md:flex gap-3">
-        {/* aria-labelでスクリーンリーダーにボタンの役割を伝える */}
         <button 
           id="btn-prev" 
           class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors cursor-pointer"
@@ -63,20 +62,15 @@ const dogImages = [
       </div>
 </section>
 
-<script>
-    // Astroの<script>タグ内に書いたJSは自動でブラウザ用に最適化されます
-    
-    // HTML要素を取得
+<script>    
     const container = document.getElementById('gallery-container');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
     const items = document.querySelectorAll('.gallery-item');
     const triggers = document.querySelectorAll('.gallery-trigger');
   
-    // スクロールする量（画像幅 500px + gapの余白分などを大まかに設定）
     const scrollAmount = 324;
   
-// ボタンの有効・無効を切り替える関数
 const updateButtons = () => {
     if (!container || !btnPrev || !btnNext) return;
 
@@ -99,15 +93,15 @@ const updateButtons = () => {
   container?.addEventListener('scroll', updateButtons);
   updateButtons();
 
-  // 1. 各画像（トリガー）をクリックした時に真ん中にスクロールさせる
+  // 各画像をクリックした時に真ん中にスクロールさせる
   triggers.forEach((trigger) => {
     trigger.addEventListener('click', (event) => {
-      // クリックされたボタンの親である「li要素 (gallery-item)」を取得
       const item = (event.currentTarget as HTMLElement).closest('.gallery-item');
+
       if (item) {
         item.scrollIntoView({
           behavior: 'smooth',
-          inline: 'center', // 横方向の真ん中に持ってくる
+          inline: 'center', 
           block: 'nearest'  // 縦方向の余計なスクロールを防ぐ
         });
       }
@@ -118,7 +112,7 @@ const updateButtons = () => {
     btnPrev?.addEventListener('click', () => {
       container?.scrollBy({ 
         left: -scrollAmount, 
-        behavior: 'smooth' // CSSのscroll-smoothと合わせて滑らかに動かす
+        behavior: 'smooth' 
       });
     });
   
