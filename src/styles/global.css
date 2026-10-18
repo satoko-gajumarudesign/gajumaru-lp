@@ -10,6 +10,27 @@
   --color-custom-gray: #5D5D5D;
   --color-custom-dark: #262626;
   --color-tx-white: #E5E0E0;
+
+  --animate-point-right: point-right 2s ease-in-out infinite;
+  --animate-point-left: point-left 2s ease-in-out infinite;
+
+  @keyframes point-right {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(6px);
+    }
+  }
+
+  @keyframes point-left {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-6px);
+    }
+  }
 }
 
 @layer base {
