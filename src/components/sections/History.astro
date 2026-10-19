@@ -14,12 +14,19 @@ import projectorIcon from "@/assets/icons/projector_icon.png";
     <div>
         <div class="relative w-full mx-auto mb-150 md:mb-200">
             <div class="flex justify-center items-center w-full">
-                <Image class="hidden md:block w-200" src={projectorIcon} alt="" />
+                <Image
+                    class="hidden md:block w-200"
+                    src={projectorIcon}
+                    alt=""
+                />
                 <h2 class="text-fluid-xl w-fit text-center text-tx-white">
                     GAJUMARU's HISTORY
                 </h2>
-                <Image class="hidden md:block w-200 rotate-12" src={filmIcon} alt="" />
-
+                <Image
+                    class="hidden md:block w-200 rotate-12"
+                    src={filmIcon}
+                    alt=""
+                />
             </div>
 
             <Image
@@ -90,7 +97,8 @@ import projectorIcon from "@/assets/icons/projector_icon.png";
                     alt=""
                 />
                 <Image
-                    class="absolute bottom-[-5%] right-[-50%] w-[50%]"
+                    id="goal-ball"
+                    class="absolute bottom-[-5%] right-[-50%] w-[50%] opacity-0"
                     src={tennisballIcon}
                     alt=""
                 />
@@ -100,3 +108,22 @@ import projectorIcon from "@/assets/icons/projector_icon.png";
 
     <WaveDivider colorClass="fill-custom-dark" />
 </section>
+
+<script>
+    const goalBall = document.getElementById('goal-ball');
+  
+    if (goalBall) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            goalBall.classList.add('animate-roll-in');
+            observer.unobserve(goalBall);
+          }
+        });
+      }, {
+        threshold: 0.5 // ボールが半分くらい画面に入ったら発火
+      });
+  
+      observer.observe(goalBall);
+    }
+  </script>
