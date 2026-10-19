@@ -12,6 +12,34 @@
   --color-tx-white: #E5E0E0;
   
     /* History.astro */
+    /* タイトル下からボールが落下するアニメーション */
+    --animate-bounce-drop: bounce-drop 1.6s linear forwards;
+
+    @keyframes bounce-drop {
+      0% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      5% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      30% {
+        transform: translate(60px, 0px) rotate(200deg);
+      }
+      55% {
+        transform: translate(80px, 150px) rotate(220deg);
+      }
+      60% {
+        transform: translate(100px, 120px) rotate(250deg);
+      }
+      80% {
+        transform: translate(150px, 240px) rotate(300deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(180px, 500px) rotate(310deg);
+      }
+    }
+
     /* 犬の足元にボールが転がるアニメーション */
     --animate-roll-in: roll-in 1.2s linear forwards;
   

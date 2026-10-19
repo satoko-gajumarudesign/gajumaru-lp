@@ -10,7 +10,7 @@ import filmIcon from "@/assets/icons/film_icon.png";
 import projectorIcon from "@/assets/icons/projector_icon.png";
 ---
 
-<section id="history" class="bg-custom-gray pt-60 pb-100 relative">
+<section id="history" class="bg-custom-gray pt-60 pb-100 relative overflow-hidden">
     <div>
         <div class="relative w-full mx-auto mb-150 md:mb-200">
             <div class="flex justify-center items-center w-full">
@@ -30,7 +30,8 @@ import projectorIcon from "@/assets/icons/projector_icon.png";
             </div>
 
             <Image
-                class="absolute top-[90%] md:top-[65%] left-[25%] md:left-[25%] w-100"
+                id="start-ball"
+                class="absolute top-[90%] md:top-[65%] left-[25%] md:left-[25%] w-100 pointer-events-none"
                 src={tennisballIcon}
                 alt=""
             />
@@ -110,20 +111,43 @@ import projectorIcon from "@/assets/icons/projector_icon.png";
 </section>
 
 <script>
-    const goalBall = document.getElementById('goal-ball');
-  
-    if (goalBall) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            goalBall.classList.add('animate-roll-in');
-            observer.unobserve(goalBall);
-          }
-        });
-      }, {
-        threshold: 0.5 // ボールが半分くらい画面に入ったら発火
-      });
-  
-      observer.observe(goalBall);
+    const startBall = document.getElementById("start-ball");
+
+    if (startBall) {
+        const startObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        startBall.classList.add("animate-bounce-drop");
+                        startObserver.unobserve(startBall);
+                    }
+                });
+            },
+            {
+                threshold: 1,
+            },
+        );
+
+        startObserver.observe(startBall);
     }
-  </script>
+
+    const goalBall = document.getElementById("goal-ball");
+
+    if (goalBall) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        goalBall.classList.add("animate-roll-in");
+                        observer.unobserve(goalBall);
+                    }
+                });
+            },
+            {
+                threshold: 0.5,
+            },
+        );
+
+        observer.observe(goalBall);
+    }
+</script>
