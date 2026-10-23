@@ -47,7 +47,7 @@ export const historyItems: HistoryItem[] = [
             },
             {
                 image: heartIcon,
-                alt: "ハートのアイコン",
+                alt: "",
                 position: "top-0 -right-10 w-60 rotate-40",
             },
         ],
@@ -56,13 +56,13 @@ export const historyItems: HistoryItem[] = [
         title: "２ mos",
         text: "I met my human at the pet shop.They fell in love with me at first sight.",
         image: History1,
-        alt: "",
+        alt: "ペットショップで店員に持たれている生後２ヶ月のがじゅまる",
     },
     {
         title: "３ mos",
         text: "My walking debut! Everyone said, 「You're so cute!」",
         image: History2,
-        alt: "",
+        alt: "散歩中に階段に座って休んでいるがじゅまる",
     },
     {
         title: "４ mos",
@@ -85,11 +85,11 @@ export const historyItems: HistoryItem[] = [
         title: "１ yr",
         text: "I grew up and became a energetic property destroyer!",
         image: History3,
-        alt: "",
+        alt: "飼い主のセーターを噛んでいるがじゅまる",
         decorations:[
             {
                 image: starIcon,
-                alt: "星のアイコン",
+                alt: "",
                 position: "top-[75%] right-[-10%] w-80 md:w-100 rotate-25",
             },
         ],
@@ -98,17 +98,17 @@ export const historyItems: HistoryItem[] = [
         title: "２-４ yrs",
         text: "We went everywhere to play, like dog parks and regular parks!",
         image: History4,
-        alt: "",
+        alt: "草原を飛ぶように走るがじゅまる",
     },
     {
         title: "５ yrs",
         text: "My camping debut! It was my first time sleeping in a tent.",
         image: History5,
-        alt: "",
+        alt: "テントの中で空を見上げるがじゅまる",
         decorations:[
             {
                 image: campIcon,
-                alt: "キャンプのアイコン",
+                alt: "テントのアイコン",
                 position: "top-[70%] md:top-[60%] left-[75%] w-100 md:w-150",
             },
         ],
@@ -117,6 +117,6 @@ export const historyItems: HistoryItem[] = [
         title: "Now",
         text: "「Let's keep making lots more fun memories together!」😃❤️",
         image: History6,
-        alt: "",
+        alt: "お気に入りのコットの上でくつろぎながら、こちらを見ているがじゅまる",
     },
 ];
