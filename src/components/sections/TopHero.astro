@@ -1,41 +1,73 @@
 ---
 // src/components/sections/TopHero.astro
-import WaveDivider from '@/components/ui/WaveDivider.astro';
-import {Image} from 'astro:assets';
-import HeroImage from '@/assets/images/gajumaru_hero.PNG';
-
+import WaveDivider from "@/components/ui/WaveDivider.astro";
+import { Image } from "astro:assets";
+import HeroImage from "@/assets/images/gajumaru_hero.PNG";
 ---
-<section id="tophero" class="flex relative h-screen items-start md:items-center justify-center bg-[url(../assets/images/blackline_bg.jpg)] overflow-hidden">
-  <div class="relative flex items-start md:items-center justify-center ">
-    <h1 class="p-20 font-serif font-bold bg-gradient-to-br from-[#C8A61F] to-[#62510F] bg-clip-text text-transparent text-3xl sm:text-6xl md:text-8xl tracking-widest leading-snug z-20 translate-y-80 md:-translate-y-60">
+
+<section
+  id="tophero"
+  class="flex relative h-screen items-start md:items-center justify-center bg-[url(../assets/images/blackline_bg.jpg)] overflow-hidden"
+>
+  <div class="relative flex items-start md:items-center justify-center">
+    <h1
+      class="p-20 font-serif font-bold bg-gradient-to-br from-[#C8A61F] to-[#62510F] bg-clip-text text-transparent text-3xl sm:text-6xl md:text-8xl tracking-widest leading-snug z-20 translate-y-80 md:-translate-y-60"
+    >
       GAJUMARU the<br />
       BEST<br />
       BUDDY.
     </h1>
 
-    <div class="absolute w-sm md:w-xl top-[150px] right-[-80px] md:top-[-100px] md:right-[-100px]">
-      <Image class="w-full relative" src={HeroImage} alt="愛犬の黒柴がじゅまるが驚いた顔をしてこちらを見ている" />
-      <svg class="absolute top-[0%] left-[60%] w-20 h-20 text-yellow-400 star-animate star-delay-1 z-20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-      </svg>
-      
-      <svg class="absolute bottom-[60%] left-[0%] md:right-[10%] w-20 h-20 text-yellow-300 star-animate star-delay-2 z-20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+    <div
+      class="absolute w-sm md:w-xl top-[150px] right-[-80px] md:top-[-100px] md:right-[-100px]"
+    >
+      <Image
+        class="w-full relative"
+        src={HeroImage}
+        alt="愛犬の黒柴がじゅまるが驚いた顔をしてこちらを見ている"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <svg
+        class="absolute top-[0%] left-[60%] w-20 h-20 text-yellow-400 star-animate star-delay-1 z-20"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+        ></path>
       </svg>
 
-      <svg class="absolute bottom-[40%] left-[70%] md:right-full w-20 h-20 text-yellow-300 star-animate star-delay-3 z-20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+      <svg
+        class="absolute bottom-[60%] left-[0%] md:right-[10%] w-20 h-20 text-yellow-300 star-animate star-delay-2 z-20"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+        ></path>
+      </svg>
+
+      <svg
+        class="absolute bottom-[40%] left-[70%] md:right-full w-20 h-20 text-yellow-300 star-animate star-delay-3 z-20"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+        ></path>
       </svg>
     </div>
   </div>
-  
+
   <WaveDivider colorClass="fill-custom-gray" />
 </section>
 
 <style>
   /* 星が拡大縮小しながら透明度も変わるキーフレーム */
   @keyframes twinkle {
-    0%, 100% {
+    0%,
+    100% {
       opacity: 0.8;
       transform: scale(1) rotate(0deg);
     }
@@ -51,9 +83,15 @@ import HeroImage from '@/assets/images/gajumaru_hero.PNG';
   }
 
   /* 星ごとにタイミングをずらして自然に見せる */
-  .star-delay-1 { animation-delay: 0s; }
-  .star-delay-2 { animation-delay: 1.2s; }
-  .star-delay-3 { animation-delay: 2.5s; }
+  .star-delay-1 {
+    animation-delay: 0s;
+  }
+  .star-delay-2 {
+    animation-delay: 1.2s;
+  }
+  .star-delay-3 {
+    animation-delay: 2.5s;
+  }
 
   /* プロフェッショナルな配慮：モーションを減らす設定への対応 */
   @media (prefers-reduced-motion: reduce) {
