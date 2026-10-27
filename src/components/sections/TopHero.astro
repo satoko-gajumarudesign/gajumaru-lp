@@ -64,7 +64,6 @@ import HeroImage from "@/assets/images/gajumaru_hero.PNG";
 </header>
 
 <style>
-  /* 星が拡大縮小しながら透明度も変わるキーフレーム */
   @keyframes twinkle {
     0%,
     100% {
@@ -77,12 +76,10 @@ import HeroImage from "@/assets/images/gajumaru_hero.PNG";
     }
   }
 
-  /* アニメーションの適用 (infinite で無限ループ) */
   .star-animate {
     animation: twinkle 3s ease-in-out infinite;
   }
 
-  /* 星ごとにタイミングをずらして自然に見せる */
   .star-delay-1 {
     animation-delay: 0s;
   }
@@ -93,7 +90,6 @@ import HeroImage from "@/assets/images/gajumaru_hero.PNG";
     animation-delay: 2.5s;
   }
 
-  /* プロフェッショナルな配慮：モーションを減らす設定への対応 */
   @media (prefers-reduced-motion: reduce) {
     .star-animate {
       animation: none;
