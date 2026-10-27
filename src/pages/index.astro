@@ -10,14 +10,17 @@ import Items from "../components/sections/Items.astro";
 import Contact from "../components/sections/Contact.astro";
 ---
 
-<Layout title="GAJUMARU-LP" description="LP風の愛犬がじゅまるの紹介ページです。アニメーションを豊富に取り入れています。">
+<Layout
+	title="GAJUMARU-LP"
+	description="LP風の愛犬がじゅまるの紹介ページです。アニメーションを豊富に取り入れています。"
+>
+	<TopHero />
 	<main>
-		<TopHero />
 		<About />
 		<Best />
 		<History />
 		<Gallery />
 		<Items />
-		<Contact />
 	</main>
+	<Contact />
 </Layout>
