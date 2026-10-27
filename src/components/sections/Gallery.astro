@@ -2,8 +2,8 @@
 // src/components/sections/Gallery.astro
 import WaveDivider from "@/components/ui/WaveDivider.astro";
 import { Image } from "astro:assets";
-import {dogImages} from "@/data/gallery.ts";
-import {navButtons} from "@/data/gallery.ts";
+import { dogImages } from "@/data/gallery.ts";
+import { navButtons } from "@/data/gallery.ts";
 ---
 
 <section id="gallery" class="bg-custom-dark pt-60 pb-100 relative">
@@ -55,8 +55,12 @@ import {navButtons} from "@/data/gallery.ts";
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class:list={["size-40 transition-transform duration-300",
-          btn.isNext ? "rotate-180 group-hover:translate-x-5" : "group-hover:-translate-x-5"]}
+                        class:list={[
+                            "size-40 transition-transform duration-300",
+                            btn.isNext
+                                ? "rotate-180 group-hover:translate-x-5"
+                                : "group-hover:-translate-x-5",
+                        ]}
                         aria-hidden="true"
                     >
                         <path d="m15 18-6-6 6-6" />
@@ -66,7 +70,7 @@ import {navButtons} from "@/data/gallery.ts";
         }
     </div>
 
-    <WaveDivider colorClass="fill-custom-gray"/>
+    <WaveDivider colorClass="fill-custom-gray" />
 </section>
 
 <script>
@@ -76,7 +80,17 @@ import {navButtons} from "@/data/gallery.ts";
     const items = document.querySelectorAll(".gallery-item");
     const triggers = document.querySelectorAll(".gallery-trigger");
 
-    const scrollAmount = 324;
+    const getScrollAmount = () => {
+        // 1つ目と2つ目の左端の距離（要素の幅＋gap）を計算
+        if (items.length >= 2) {
+            const firstItem = items[0] as HTMLElement;
+            const secondItem = items[1] as HTMLElement;
+            return secondItem.offsetLeft - firstItem.offsetLeft;
+        }
+        // 要素が1つしか取得できなかった場合
+        const singleItem = items[0] as HTMLElement;
+        return singleItem?.offsetWidth || 300;
+    };
 
     const updateButtons = () => {
         if (!container || !btnPrev || !btnNext) return;
@@ -123,7 +137,7 @@ import {navButtons} from "@/data/gallery.ts";
     // 戻るボタンのクリックイベント
     btnPrev?.addEventListener("click", () => {
         container?.scrollBy({
-            left: -scrollAmount,
+            left: -getScrollAmount(),
             behavior: "smooth",
         });
     });
@@ -131,7 +145,7 @@ import {navButtons} from "@/data/gallery.ts";
     // 次へボタンのクリックイベント
     btnNext?.addEventListener("click", () => {
         container?.scrollBy({
-            left: scrollAmount,
+            left: getScrollAmount(),
             behavior: "smooth",
         });
     });
