@@ -74,9 +74,9 @@ import { navButtons } from "@/data/gallery.ts";
 </section>
 
 <script>
-    const container = document.getElementById("gallery-container");
-    const btnPrev = document.getElementById("btn-prev");
-    const btnNext = document.getElementById("btn-next");
+    const container = document.getElementById("gallery-container") as HTMLButtonElement;
+    const btnPrev = document.getElementById("btn-prev") as HTMLButtonElement;
+    const btnNext = document.getElementById("btn-next") as HTMLButtonElement;
     const items = document.querySelectorAll(".gallery-item");
     const triggers = document.querySelectorAll(".gallery-trigger");
 
