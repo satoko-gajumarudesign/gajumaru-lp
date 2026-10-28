@@ -45,6 +45,12 @@ const ogImageUrl = new URL("/ogp.jpeg", Astro.url);
 		<meta property="og:image" content={ogImageUrl} />
 		<meta property="og:url" content={Astro.url} />
 		<meta name="twitter:card" content="summary_large_image" />
+
+		<script is:inline>
+			// 視差効果を減らす設定でなければ、HTMLタグに js-enabled を即座に付与
+			if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+			  document.documentElement.classList.add('js-enabled');}
+			  </script>
 	</head>
 
 	<body
