@@ -30,20 +30,33 @@ import SocksIcon from "@/assets/icons/socks_icon.png";
             </div>
             <ul class="flex">
                 <li>
-                    <Image src={FlowerIcon} alt="散歩中に見かける花と蜂をイメージしたアイコン" />
+                    <Image
+                        src={FlowerIcon}
+                        alt="散歩中に見かける花と蜂をイメージしたアイコン"
+                    />
                 </li>
                 <li>
-                    <Image src={BallIcon} alt="遊びに使うサッカーボールをイメージしたアイコン" />
+                    <Image
+                        src={BallIcon}
+                        alt="遊びに使うサッカーボールをイメージしたアイコン"
+                    />
                 </li>
                 <li>
-                    <Image src={SocksIcon} alt="いたずらで噛んだり、振り回す靴下をイメージしたアイコン" />
+                    <Image
+                        src={SocksIcon}
+                        alt="いたずらで噛んだり、振り回す靴下をイメージしたアイコン"
+                    />
                 </li>
             </ul>
         </div>
 
-        <figure data-animate="animate-about-fadein" class="md:max-w-full opacity-0">
+        <figure
+            data-animate="animate-about-fadein"
+            class="md:max-w-full opacity-0"
+        >
             <Image
-                
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 768px) 90vw, 50vw"
                 class="object-cover w-full h-full rounded-[50%]"
                 src={AboutGaju}
                 alt="お城の前に横向きに立ち、こちらを向いている愛犬がじゅまる"

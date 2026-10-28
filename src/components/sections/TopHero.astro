@@ -19,10 +19,12 @@ import HeroImage from "@/assets/images/gajumaru_hero.PNG";
     </h1>
 
     <div
-      class="absolute w-sm md:w-xl top-[150px] right-[-80px] md:top-[-100px] md:right-[-100px]"
+      class="absolute w-sm md:w-xl top-150 -right-80 md:-top-100 md:-right-100"
     >
       <Image
         class="w-full relative"
+        widths={[400, 800, 1200]}
+        sizes="(max-width: 768px) 384px, 576px"
         src={HeroImage}
         alt="愛犬の黒柴がじゅまるが驚いた顔をしてこちらを見ている"
         loading="eager"
