@@ -31,18 +31,18 @@ export interface HistoryItem {
 
 export const historyItems: HistoryItem[] = [
     {
-        title: "BORN！",
+        title: "BORN !",
         text: "I was born in Kagawa Prefecture and am the eldest of three siblings.",
         alt: "",
         decorations: [
             {
                 image: birthdaycakeIcon,
-                alt: "ケーキのアイコン",
+                alt: "",
                 position: "-top-[90px] -left-[20px] w-[200px]",
             },
             {
                 image: heartIcon,
-                alt: "ハートのアイコン",
+                alt: "",
                 position: "-top-40 -right-10 w-80 rotate-10",
             },
             {
@@ -53,37 +53,37 @@ export const historyItems: HistoryItem[] = [
         ],
     },
     {
-        title: "２ mos",
-        text: "I met my human at the pet shop.They fell in love with me at first sight.",
+        title: "2 mos",
+        text: "I met my human at the pet shop. They fell in love with me at first sight.",
         image: History1,
         alt: "ペットショップで店員に持たれている生後２ヶ月のがじゅまる",
     },
     {
-        title: "３ mos",
-        text: "My walking debut! Everyone said, 「You're so cute!」",
+        title: "3 mos",
+        text: "My walking debut! Everyone said, ”You're so cute!”",
         image: History2,
         alt: "散歩中に階段に座って休んでいるがじゅまる",
     },
     {
-        title: "４ mos",
+        title: "4 mos",
         text: "I got sick late at night and had to be rushed to the hospital.",
         alt: "",
         decorations:[
             {
                 image: ambulanceIcon,
-                alt: "救急車のアイコン",
+                alt: "",
                 position: "top-[-40%] md:top-[-30%] left-[40%] md:left-[50%] w-200",
             },
             {
                 image: medicineIcon,
-                alt: "薬のアイコン",
+                alt: "",
                 position: "top-[55%] md:top-[60%] left-[50%] w-150",
             },
         ],
     },
     {
-        title: "１ yr",
-        text: "I grew up and became a energetic property destroyer!",
+        title: "1 yr",
+        text: "I grew up and became an energetic property destroyer!",
         image: History3,
         alt: "飼い主のセーターを噛んでいるがじゅまる",
         decorations:[
@@ -95,27 +95,27 @@ export const historyItems: HistoryItem[] = [
         ],
     },
     {
-        title: "２-４ yrs",
+        title: "2-4 yrs",
         text: "We went everywhere to play, like dog parks and regular parks!",
         image: History4,
         alt: "草原を飛ぶように走るがじゅまる",
     },
     {
-        title: "５ yrs",
+        title: "5 yrs",
         text: "My camping debut! It was my first time sleeping in a tent.",
         image: History5,
         alt: "テントの中で空を見上げるがじゅまる",
         decorations:[
             {
                 image: campIcon,
-                alt: "テントのアイコン",
+                alt: "",
                 position: "top-[70%] md:top-[60%] left-[75%] w-100 md:w-150",
             },
         ],
     },
     {
         title: "Now",
-        text: "「Let's keep making lots more fun memories together!」😃❤️",
+        text: "”Let's keep making lots more fun memories together! 😃❤️”",
         image: History6,
         alt: "お気に入りのコットの上でくつろぎながら、こちらを見ているがじゅまる",
     },
