@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.js-enabled .js-fade-init:not(.is-revealed) {
+  opacity: 0;
+}
+
 @theme {
   --font-sans: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 
