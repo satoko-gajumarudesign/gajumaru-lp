@@ -3,6 +3,7 @@
 import '@fontsource/noto-sans-jp/400.css';
 import '@fontsource/noto-sans-jp/500.css';
 import '@fontsource/noto-sans-jp/700.css';
+import '@fontsource-variable/playfair-display';
 
 import "../styles/global.css";
 
@@ -64,7 +65,7 @@ const siteName = "愛犬の紹介LP（GAJUMARU-LP）";
 		<link rel="manifest" href="/site.webmanifest" />
 
 		<script is:inline>
-			// 視差効果を減らす設定でなければ、HTMLタグに js-enabled を即座に付与
+			// 視差効果を減らす設定でなければ、HTMLタグに js-enabled を付与しアニメーションを透明化する
 			if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 			  document.documentElement.classList.add('js-enabled');}
 			  </script>
