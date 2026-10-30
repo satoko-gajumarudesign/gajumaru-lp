@@ -89,17 +89,17 @@ const favoriteItems = [
         transform-style: preserve-3d;
     }
 
-    .star-container > :global(*) {
+    :global(.js-enabled) .star-container:not(.is-flipped) > :global(*) {
         opacity: 0;
     }
 
     .star-container.is-flipped {
-        animation: flip-star 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        animation: flip-star 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
         animation-delay: var(--delay, 0s);
     }
 
     .star-container.is-flipped > :global(*) {
-        animation: reveal-image 0.8s linear forwards;
+        animation: reveal-image 0.8s linear both;
         animation-delay: var(--delay, 0s);
     }
 
