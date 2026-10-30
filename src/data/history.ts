@@ -1,6 +1,6 @@
-// src/data/hisitory.ts
+// src/data/history.ts
 /// <reference types="astro/client" />　
-//　env.d.tsにも書いてあるがなぜか効かないためここにも記述
+// env.d.tsにも書いてあるがなぜか効かないためここにも記述
 
 import type { ImageMetadata } from "astro";
 
@@ -38,7 +38,7 @@ export const historyItems: HistoryItem[] = [
             {
                 image: birthdaycakeIcon,
                 alt: "",
-                position: "-top-[90px] -left-[20px] w-[200px]",
+                position: "-top-90 -left-20 w-200",
             },
             {
                 image: heartIcon,
