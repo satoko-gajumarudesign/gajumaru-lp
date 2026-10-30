@@ -6,6 +6,7 @@
 
 @theme {
   --font-sans: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display Variable", "Hiragino Mincho ProN", "Yu Mincho", serif;
 
   --spacing: 0.0625rem;
 
@@ -95,7 +96,7 @@
   }
 
   /* 犬にハートが出現するアニメーション */
-  --animate-pop-heart: pop-heart 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s forwards;
+  --animate-pop-heart: pop-heart 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s both;
 
   @keyframes pop-heart {
     0% {
@@ -159,7 +160,26 @@
   *:focus-visible {
     outline: 2px solid var(--color-wave-gold);
     outline-offset: 2px;
+
   }
+}
+/* 視差効果を減らす設定をしていないユーザーはスムーズスクロールを適用 */
+@media (prefers-reduced-motion: no-preference) {
+html {
+  scroll-behavior: smooth;
+}
+}
+
+/* 視差効果を減らす設定のユーザーは全要素の動きを一括で最小化 */
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
 }
 
 @utility text-fluid-xl {
