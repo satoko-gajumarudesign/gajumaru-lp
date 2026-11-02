@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 
 const ogImageUrl = new URL(image, Astro.site ?? Astro.url);
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 
 const siteName = "愛犬の紹介LP（GAJUMARU-LP）";
 ---
