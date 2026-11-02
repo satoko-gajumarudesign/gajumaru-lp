@@ -23,7 +23,7 @@ import { navButtons } from "@/data/gallery.ts";
                         <li class="snap-center shrink-0 w-[80vw] md:w-500 overflow-hidden group p-10 bg-white gallery-item">
                             <button
                                 type="button"
-                                class="gallery-trigger w-full h-full text-left cursor-pointer overflow-hidden block relative"
+                                class="gallery-trigger relative  w-full h-full text-left enabled:cursor-pointer disabled:pointer-events-none overflow-hidden"
                                 aria-label={`${index + 1}枚目の画像: ${image.alt} にフォーカス`}
                             >
                                 <Image
@@ -48,7 +48,7 @@ import { navButtons } from "@/data/gallery.ts";
                     type="button"
                     id={btn.id}
                     aria-label={btn.label}
-                    class="group flex items-center justify-center size-60 rounded-full border border-wave-gold/40 bg-white/5 text-wave-gold/80 backdrop-blur-sm transition-all duration-300 hover:border-wave-gold hover:bg-wave-gold/15 hover:text-wave-gold hover:shadow-[0_0_15px_rgba(200,166,31,0.35)] cursor-pointer disabled:opacity-25 disabled:pointer-events-none disabled:shadow-none"
+                    class="group flex items-center justify-center size-60 rounded-full border border-wave-gold/40 bg-white/5 text-wave-gold/80 backdrop-blur-sm transition-all duration-300 hover:border-wave-gold hover:bg-wave-gold/15 hover:text-wave-gold hover:shadow-[0_0_15px_rgba(200,166,31,0.35)] enabled:cursor-pointer disabled:opacity-25 disabled:pointer-events-none disabled:shadow-none"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -101,16 +101,19 @@ import { navButtons } from "@/data/gallery.ts";
 
     const updateButtons = () => {
         if (!container || !btnPrev || !btnNext) return;
+        // 中央にある画像のインデックスを計算
+        const currentIndex = Math.round(
+            container.scrollLeft / getScrollAmount(),
+        );
 
-        // 1枚目が中央にあるとき（左端）は「前へ」を無効化
-        const isAtStart = container.scrollLeft <= 4;
-        btnPrev.disabled = isAtStart;
+        // 「前へ」「次へ」ボタンの有効・無効をインデックスで判定
+        btnPrev.disabled = currentIndex === 0;
+        btnNext.disabled = currentIndex === items.length - 1;
 
-        // 最後の写真が中央にあるとき（右端）は「次へ」を無効化
-        const isAtEnd =
-            container.scrollLeft + container.clientWidth >=
-            container.scrollWidth - 4;
-        btnNext.disabled = isAtEnd;
+        // 中央にある画像のトリガーボタンを無効化
+        triggers.forEach((trigger, index) => {
+            (trigger as HTMLButtonElement).disabled = index === currentIndex;
+        });
     };
 
     // スクロール時と画面リサイズ時にボタンの状態を更新
