@@ -1,6 +1,4 @@
 // src/data/history.ts
-/// <reference types="astro/client" />　
-// env.d.tsにも書いてあるがなぜか効かないためここにも記述
 
 import type { ImageMetadata } from "astro";
 
