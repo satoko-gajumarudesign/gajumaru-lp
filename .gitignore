@@ -21,6 +21,7 @@ pnpm-debug.log*
 !.env.example
 
 # macOS-specific files
+**/.DS_Store
 .DS_Store
 
 # jetbrains setting folder
