@@ -8,10 +8,13 @@ import { navButtons } from "@/data/gallery.ts";
 
 <section id="gallery" class="bg-custom-dark pt-60 pb-100 relative">
     <div>
-        <h2 class="pb-80 text-fluid-xl text-center text-wave-gold">LOVELY MOMENTS</h2>
+        <h2 class="pb-80 text-fluid-xl text-center text-wave-gold">
+            LOVELY MOMENTS
+        </h2>
 
         <div
             id="gallery-container"
+            tabindex="-1"
             class="w-full pb-40 overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
             <ul
@@ -23,6 +26,8 @@ import { navButtons } from "@/data/gallery.ts";
                         <li class="snap-center shrink-0 w-[80vw] md:w-500 overflow-hidden group p-10 bg-white gallery-item">
                             <button
                                 type="button"
+                                tabindex="-1"
+                                disabled={index === 0}
                                 class="gallery-trigger relative  w-full h-full text-left enabled:cursor-pointer disabled:pointer-events-none overflow-hidden"
                                 aria-label={`${index + 1}枚目の画像: ${image.alt} にフォーカス`}
                             >
@@ -41,9 +46,11 @@ import { navButtons } from "@/data/gallery.ts";
         </div>
     </div>
 
-    <div class="flex flex-wrap justify-center items-center  max-w-248 mx-auto gap-x-12 gap-y-16 pb-40" 
-    role="group"
-    aria-label="ギャラリーの表示位置">
+    <div
+        class="flex flex-wrap justify-center items-center max-w-248 mx-auto gap-x-12 gap-y-16 pb-40"
+        role="group"
+        aria-label="ギャラリーの表示位置"
+    >
         {
             dogImages.map((image, index) => (
                 <button
@@ -162,7 +169,7 @@ import { navButtons } from "@/data/gallery.ts";
     dots.forEach((dot, index) => {
         dot.addEventListener("click", () => {
             items[index]?.scrollIntoView({
-                behavior: "smooth",
+                behavior: "auto",
                 inline: "center",
                 block: "nearest",
             });
