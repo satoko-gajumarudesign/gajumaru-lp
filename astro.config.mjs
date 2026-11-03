@@ -8,7 +8,7 @@ import react from '@astrojs/react';
 // https://astro.build/config
 
 export default defineConfig({
-  site: 'https://gajumaru-design.com/GAJUMARU-LP/',
+  site: 'https://lp.gajumaru-design.com',
   
   vite: {
     plugins: [tailwindcss()]
