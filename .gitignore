@@ -27,8 +27,8 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# ログファイル
-npm-debug.log*
+# VS Code settings
+.vscode/launch.json
 
 # AI assistant rules
 CLAUDE.md
