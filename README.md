@@ -71,7 +71,7 @@ Figmaを用いてプロトタイピングを行い、黒柴の美しさや特別
 
 * **Hosting / CI/CD:** Cloudflare Pages, GitHub
 
-* **Node.js:** v18.x 以上推奨（ローカル開発時）
+* **Node.js:** v22.12.0 以上推奨（ローカル開発時）
 
 ## ⚠️ ご利用について (License)
 
@@ -79,4 +79,4 @@ Figmaを用いてプロトタイピングを行い、黒柴の美しさや特別
 
 採用担当者様やクライアント様による、スキル評価目的でのソースコード閲覧は大歓迎です。ただし、デザインやソースコードの無断使用、複製、再配布は固くお断りいたします。
 
-Copyright (c) 2026 [satoko] All Rights Reserved.
+Copyright (c) 2026 satoko All Rights Reserved.
