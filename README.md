@@ -1,44 +1,82 @@
-# Astro Starter Kit: Basics
+# GAJUMARU-LP - Concept Landing Page
 
-```sh
-npm create astro@latest -- --template basics
-```
+## プロジェクトの概要
 
-## 🚀 Project Structure
+愛犬の黒柴「がじゅまる」の魅力を伝えることを題材に、企画・デザインからコーディング、インフラ構築まで全工程を単独で設計・開発したシングルページのランディングページ（LP）です。
+モダンなフロントエンド技術であるAstroとTailwind CSSを採用し、視覚的なインパクト（動的なUI演出）と高いパフォーマンス・保守性の両立にこだわって実装しています。
 
-Inside of your Astro project, you'll see the following folders and files:
+* **Demo URL:** https://lp.gajumaru-design.com
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+* **担当範囲:** 企画・構成 / UIデザイン（Figma） / フロントエンド実装 / インフラ・CI/CD構築
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## ターゲットとコンセプト
 
-## 🧞 Commands
+* **制作目的:** モダンなWeb開発環境（Astro / Tailwind CSS）の習得と、デザインからデプロイまで一貫して完結できる実装スキルを証明するため。
 
-All commands are run from the root of the project, from a terminal:
+* **コンセプト:** 「親しみやすさの中に光る、おしゃれでリッチな体験」。自身が運営する落ち着いたカフェ風のブログとは対照的なアプローチを取り、デザインの引き出しの広さを表現しています。
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## デザインとUI/UXのこだわり
 
-## 👀 Want to learn more?
+### 1. リッチな世界観と視覚的リズムを生む色彩・レイアウト設計
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Figmaを用いてプロトタイピングを行い、黒柴の美しさや特別感を際立たせる配色とレイアウトを設計しました。セクションごとに背景色を交互に切り替え、その境界線にゴールドの波形（Wave）デザインをあしらうことで、単調になりがちな縦長LPに心地よい視覚的リズムと奥行きを生み出しています。
+
+* **Background Colors (`#262626` / `#5D5D5D`):** 真っ黒ではない深みのあるダークカラーと落ち着いたグレーをセクションごとに交互に配置し、コンテンツの区切りを直感的に伝える設計。
+
+* **Accent Color (`#C8A61F`):** セクションの境目を彩る波形の装飾や要所のアクセントに、華やかさと上品さを添えるゴールドを採用。
+
+* **Text Color (`#E5E0E0`):** ダークトーンの背景に対してコントラストが強すぎないオフホワイトを採用し、長文でも目が疲れにくい可読性を確保。
+
+* **Typography:** 視覚的な洗練さとリッチな世界観を最優先し、サイト内のテキストはすべて英語で統一。エレガントなセリフ体「Playfair Display」とすっきりとしたサンセリフ体「Noto Sans JP」を組み合わせ、海外の雑誌やブランドサイトのようなスタイリッシュな印象に仕上げています。
+
+### 2. 離脱を防ぎインパクトを残すアニメーション設計
+
+ブログなどの回遊型メディアとは異なり、「一度きりの閲覧になりやすい」というLP特有の性質を考慮したUI設計を行っています。
+
+* スクロールに応じたアニメーション演出を豊富に取り入れ、波形ディバイダーの流れるようなデザインと相まってユーザーの視線を自然に下へと誘導。最後まですべてのコンテンツを飽きずに楽しんでもらい、強い印象を残す動的な体験を提供しています。
+
+## 技術スタックとアーキテクチャ
+
+本プロジェクトでは、表示速度の追求と開発効率・保守性の向上を見据えたモダンなアーキテクチャを採用しています。
+
+### フレームワーク & CSS設計: Astro + Tailwind CSS v4
+
+従来のCSS設計（FLOCSS + BEMなど）から思考をアップデートし、コンポーネント指向とUtility-firstのアプローチを掛け合わせて構築しています。
+
+* **Astroの採用:** ページ構造やコンポーネントの仕組みを体系的に理解し、不要なJavaScriptを削ぎ落とした高速な静的サイト生成（SSG）を実現。
+
+* **Tailwind CSS v4によるスタイリング:** 既存のCSS設計をTailwindのユーティリティクラスへ変換。v4の新機能である `@theme` ディレクティブを活用してカスタム変数（`--color-wave-gold` 等）を一元管理し、デザインの一貫性と高い保守性を担保しています。
+
+### パフォーマンスの最適化 (LCP改善)
+
+アニメーションやリッチな表現を取り入れつつも、Webサイトの表示速度を損なわない施策を講じています。
+
+* **Webフォントのセルフホスト:** 外部フォントサーバーへの通信依存（レンダリングブロック）を減らすため、`@fontsource` を用いてフォントデータをセルフホスト化し、LCP（最大コンテンツの描画）の最適化を図っています。
+
+* **セマンティックなマークアップ:** 適切なHTMLタグの選定と見出し階層（h1〜h3）の設計に加え、ビジュアル重視で全文英語としたテキストを補完するため、画像の alt 属性には日本語で適切な説明文を設定し、スクリーンリーダーや検索エンジンへの配慮を行っています。
+
+### モダンなCI/CDパイプラインとインフラ構築
+
+実務でのチーム開発や運用フローを想定したホスティング環境を構築しています。
+
+* **Cloudflare Pages + GitHub:** GitHubリポジトリへのPushをトリガーとして、Cloudflare Pages上で自動的にビルド・デプロイが走るCI/CD環境を構築。独自ドメイン（サブドメイン）のルーティング設定まで一貫して行っています。
+
+## 動作環境・使用ツール
+
+* **Design:** Figma
+
+* **Framework:** Astro
+
+* **Styling:** Tailwind CSS v4
+
+* **Hosting / CI/CD:** Cloudflare Pages, GitHub
+
+* **Node.js:** v18.x 以上推奨（ローカル開発時）
+
+## ⚠️ ご利用について (License)
+
+本リポジトリは、Webデザイナー／フロントエンドエンジニアとしてのスキルや設計思想（Figmaによるデザイン、Astro/Tailwind CSSを用いたモダンな実装、パフォーマンス最適化など）を証明するためのポートフォリオとして公開しています。
+
+採用担当者様やクライアント様による、スキル評価目的でのソースコード閲覧は大歓迎です。ただし、デザインやソースコードの無断使用、複製、再配布は固くお断りいたします。
+
+Copyright (c) 2026 [satoko] All Rights Reserved.
